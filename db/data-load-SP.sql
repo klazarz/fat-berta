@@ -11,7 +11,7 @@ BEGIN
     DBMS_CLOUD.COPY_DATA (
         table_name => 'INPUT',
         credential_name => 'DEF_CRED_NAME',
-        file_uri_list =>'https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/K6x8IhajWzxdjd7ZgO9kZWeOMkw7N7n1_oQlXGdtDQVLDqdwcYs5S7HImTQge5EG/n/fropgpctldxd/b/hafur/o/library.csv',
+        file_uri_list =>'https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/pob365OlfcV5FaM5MsyREZgq6d5r5Z9rOlXqdwdY3Vs8cYwZHKvmzd0gxTjBgoEQ/n/fropgpctldxd/b/hafur/o/library.csv',
         format => json_object('type' value 'csv', 'delimiter' value ',', 'skipheaders' value 1, 'blankasnull' value 'true')
     );
 END;
@@ -25,6 +25,7 @@ select * from INPUT;
 
 END;
 
+commit;
 
 END DATA_LOAD;
 /
